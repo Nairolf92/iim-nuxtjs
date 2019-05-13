@@ -2,7 +2,14 @@ module.exports = {
 
   mode: 'universal',
   env: {
-    baseURL : "https://my-json-server.typicode.com/alexandre-tobia/api-sample"
+    baseURL : "http://localhost:3004"
+  },
+
+  generate: {
+    routes: [
+      '/character/1',
+      '/character/2',
+    ]
   },
   /*
   ** Headers of the page
@@ -15,7 +22,8 @@ module.exports = {
       { hid: 'description', name: 'description', content: 'Nuxt.js project' }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      { rel: 'stylesheet', href: 'https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css' }
     ]
   },
   /*
@@ -40,5 +48,5 @@ module.exports = {
       }
     }
   }
-}
+};
 
