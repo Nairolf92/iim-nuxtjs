@@ -16,7 +16,6 @@
 
     async asyncData({ params }){
       const {data} = await axios.get(`/characters/${params.id}`);
-      console.log(data);
       return {
         currentCharacter: data
       }

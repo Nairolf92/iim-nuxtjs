@@ -16,7 +16,6 @@
   export default{
     async asyncData(){
       const {data} = await axios.get('/characters');
-      console.log(data);
       return {
         characters : data
       }
