@@ -19,7 +19,7 @@
               Gender:
             </label>
             <input class="form-field" name="gender" id="gender" v-model="gender"/>
-            <input class="form-button" type="submit" />
+            <input class="btn btn-success form-button" type="submit" />
           </form>
         </div>
       </div>

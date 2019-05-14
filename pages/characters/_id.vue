@@ -17,12 +17,15 @@
               Gender:
             </label>
             <input class="form-field" name="gender" id="gender" v-model="currentCharacter.gender"/>
-            <input class="form-button" type="submit" />
+            <input class="btn btn-success form-button" type="submit" />
           </form>
-          <button v-on:click="deleteCharacter">Supprimer</button>
+          <br>
+          <button type="button" class="btn btn-danger" v-on:click="deleteCharacter">Supprimer</button>
+          <br>
+          <br>
         </div>
         <nuxt-link :to="{name: 'characters'}">
-          <button>Retour</button>
+          <button type="button" class="btn btn-primary" >Retour</button>
         </nuxt-link>
   </section>
 </template>
