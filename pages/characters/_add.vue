@@ -44,7 +44,7 @@
         this.character['url'] = this.url;
         this.character['name'] = this.name;
         this.character['gender'] = this.gender;
-          axios.post('/characters', this.character)
+        axios.post('/characters', this.character)
       }
     }
   }

@@ -13,12 +13,6 @@
         <li class="nav-item">
           <a class="nav-link" href="/characters/add">Add character<span class="sr-only"></span></a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/characters/modify">Modify character<span class="sr-only"></span></a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/characters/delete">Delete Character<span class="sr-only"></span></a>
-        </li>
       </ul>
     </div>
   </nav>
