@@ -48,10 +48,11 @@
     },
     methods: {
       modifyCharacter: function(e){
-        axios.put('/characters', this.currentCharacter)
+        axios.put(`/characters/${this.loadedCharacter.id}`, this.currentCharacter)
       },
       deleteCharacter: function(e){
-        axios.delete('/characters', this.loadedCharacter)
+        axios.delete(`/characters/${this.loadedCharacter.id}`, this.loadedCharacter)
+
       }
     },
 
