@@ -4,7 +4,7 @@
           {{ title }}
         </h1>
         <div class="content" v-if="currentCharacter">
-          <form name="contact" action="http://localhost:3000/characters" method="post" @submit="checkForm">
+          <form name="contact" action="http://localhost:3000/characters" method="post" @submit="modifyCharacter">
             <label class="form-label" for="url">
               URL:
             </label>
@@ -19,7 +19,7 @@
             <input class="form-field" name="gender" id="gender" v-model="currentCharacter.gender"/>
             <input class="form-button" type="submit" />
           </form>
-          <button onclick="">Supprimer</button>
+          <button v-on:click="deleteCharacter">Supprimer</button>
         </div>
         <nuxt-link :to="{name: 'characters'}">
           <button>Retour</button>
@@ -35,13 +35,23 @@
     async asyncData({ params }){
       const {data} = await axios.get(`/characters/${params.id}`);
       return {
-        currentCharacter: data
+        loadedCharacter : data,
+        currentCharacter : data
       }
     },
     data(){
       return{
+        loadedCharacter : null,
         currentCharacter: null,
-        title : "Modifier un personnage"
+        title : "Modifier ou supprimer un personnage"
+      }
+    },
+    methods: {
+      modifyCharacter: function(e){
+        axios.put('/characters', this.currentCharacter)
+      },
+      deleteCharacter: function(e){
+        axios.delete('/characters', this.loadedCharacter)
       }
     },
 
