@@ -9,6 +9,7 @@ module.exports = {
     routes: [
       '/character/1',
       '/character/2',
+      '/character/3',
     ]
   },
   /*

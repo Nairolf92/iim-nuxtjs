@@ -11,18 +11,6 @@
       "url": "https://www.anapioficeandfire.com/api/characters/583",
       "name": "Tyrion Lannister",
       "gender": "Male"
-    },
-    {
-      "url": "https://www.anapioficeandfire.com/api/characters/583",
-      "name": "Arya Stark",
-      "gender": "Female",
-      "id": 3
-    }
-  ],
-  "houses": [
-    {
-      "url": "https://www.anapioficeandfire.com/api/houses/1",
-      "name": "Targaryan"
     }
   ]
 }

@@ -28,7 +28,12 @@
 </template>
 
 <script>
+  import Vue from 'vue';
   import axios from "~/plugins/axios";
+  import 'vuejs-dialog/dist/vuejs-dialog.min.css';
+  import VuejsDialog from 'vuejs-dialog';
+  Vue.use(VuejsDialog);
+
 
   export default{
 
@@ -51,8 +56,25 @@
         axios.put(`/characters/${this.loadedCharacter.id}`, this.currentCharacter)
       },
       deleteCharacter: function(e){
-        axios.delete(`/characters/${this.loadedCharacter.id}`, this.loadedCharacter)
-
+        event.preventDefault();
+        this.$dialog
+          .confirm(`Veux-tu vraiment supprimer ${this.loadedCharacter.name} ?`)
+          .then(response => {
+            axios.delete(`/characters/${this.loadedCharacter.id}`, this.loadedCharacter)
+              .then(response => {
+                if(response.status === 200) {
+                  this.$router.push('/characters')
+                } else {
+                  alert('Un problème est survenu');
+                }
+              })
+              .catch(function(error) {
+              console.log(error);
+            });
+          })
+        .catch(function (error) {
+          console.log(error);
+        });
       }
     },
 
